@@ -1,6 +1,6 @@
 <?php
 // Each page supplies $page and $title before including this shared layout.
-$nav = ['pos' => ['index.php', 'grid', 'Point of sale']];
+$nav = ['pos' => ['index.php', 'grid', 'Point of sale'], 'admin' => ['admin.php', 'box', 'Products'], 'sales' => ['sales.php', 'history', 'Sales history']];
 ?>
 <!DOCTYPE html>
 <html lang="en">

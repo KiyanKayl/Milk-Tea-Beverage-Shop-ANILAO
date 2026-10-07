@@ -14,3 +14,5 @@ if (!isset($_SESSION['csrf'])) {
 }
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/helpers.php';
+require_once __DIR__ . '/pos.php';
+require_once __DIR__ . '/products.php';

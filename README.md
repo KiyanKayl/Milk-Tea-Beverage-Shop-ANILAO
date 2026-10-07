@@ -32,6 +32,6 @@ The commits are created during submission preparation, rather than backdated dev
 
 ## Current stage
 
-PDO SQLite setup, database schema/seed menu, responsive cashier interface,
-product cards, categories, search, and layout for the cart/payment controls.
-Ordering and payment are intentionally disabled until the next commit.
+Working ordering and customization, cart quantity controls, totals, cash/change,
+transaction recording, stock deduction, receipts, product management, and sales history.
+The next commit adds the debug-review fixes and regression tests.

@@ -1,0 +1,5 @@
+/database/*.sqlite*
+/tests/tmp/
+/node_modules/
+/test-results/
+/.qa/

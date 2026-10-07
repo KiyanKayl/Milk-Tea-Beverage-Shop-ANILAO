@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="250" viewBox="0 0 300 250">
+<defs><linearGradient id="drink" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#a98664"/><stop offset=".58" stop-color="#684a35"/><stop offset="1" stop-color="#a98664"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity=".55"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".9" stop-color="#fff" stop-opacity=".2"/></linearGradient><clipPath id="cup"><path d="M91 92h94l-11 115q-33 12-72 0z"/></clipPath><filter id="blur"><feGaussianBlur stdDeviation="4"/></filter></defs>
+<path fill="#e9e3da" d="M0 0h300v250H0z"/><circle cx="228" cy="46" r="75" fill="#fff" opacity=".2"/><circle cx="41" cy="228" r="61" fill="#fff" opacity=".17"/>
+<ellipse cx="148" cy="222" rx="57" ry="8" fill="#402e22" opacity=".15" filter="url(#blur)"/>
+<g transform="rotate(5 150 140)"><path d="m157 24 8 2-21 78-8-2z" fill="#402e22"/><path d="m157 24 3 1-20 77-3-1z" fill="#fff" opacity=".15"/>
+<path d="M91 92h94l-11 115q-33 12-72 0z" fill="url(#drink)"/>
+<g clip-path="url(#cup)"><path d="M88 94h102v24q-22-10-51-3t-51-5z" fill="#a98664" opacity=".8"/><path d="M97 97h9l10 108h-11z" fill="#fff" opacity=".29"/><path d="M178 98h4l-10 106h-3z" fill="#fff" opacity=".35"/><path d="M115 103l16 2-3 13-17-2zM145 98l15 4-4 13-15-3zM165 104l14 3-3 12-14-2z" fill="#fff" opacity=".24"/></g>
+<path d="M91 92h94l-11 115q-33 12-72 0z" fill="url(#glass)" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
+<ellipse cx="138" cy="91" rx="50" ry="9" fill="#a98664"/><ellipse cx="138" cy="89" rx="51" ry="8" fill="#fff" opacity=".72"/><ellipse cx="138" cy="88" rx="43" ry="5" fill="#a98664" opacity=".75"/>
+<path d="m145 80-2 9" stroke="#402e22" stroke-width="7"/>
+<circle cx="140" cy="150" r="17" fill="#fff" opacity=".8"/><path d="M132 140h16l-2 18h-12zM130 139h20m-10-1 3-6" fill="none" stroke="#402e22" stroke-width="1.3" stroke-linecap="round"/><path d="M136 146h8" stroke="#402e22" stroke-width="1.2"/>
+</g><path d="m228 173 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#fff" opacity=".7"/><circle cx="64" cy="73" r="3" fill="#fff" opacity=".7"/></svg>

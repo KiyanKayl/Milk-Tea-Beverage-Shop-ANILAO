@@ -71,6 +71,12 @@ function checkout(PDO $db, array $input): array
             $total += $subtotal;
             $prepared[] = [$id, $product['name'], $size, $sweetness, $ice, json_encode(array_values($selected), JSON_THROW_ON_ERROR), $quantity, $price, $subtotal];
         }
+        // Compare the cashier's displayed total with current database prices.
+        // This value is a consistency check, never the source of the sale price.
+        if (array_key_exists('expected_total', $input)
+            && integer($input['expected_total'], 'Displayed total', 1, PHP_INT_MAX) !== $total) {
+            throw new InvalidArgumentException('Menu prices changed. Review the updated total before paying.');
+        }
         if ($cash < $total) {
             throw new InvalidArgumentException('Cash received is less than the order total.');
         }
@@ -91,7 +97,7 @@ function checkout(PDO $db, array $input): array
         $db->exec('COMMIT');
         return ['id' => $saleId, 'transaction_number' => $number];
     } catch (Throwable $error) {
-        $db->exec('ROLLBACK');
+        rollback_safely($db);
         throw $error;
     }
 }

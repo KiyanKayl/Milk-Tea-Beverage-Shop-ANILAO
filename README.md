@@ -30,8 +30,24 @@ Currency: PHP. Timezone: Asia/Manila. Large size: +₱20; pearls/nata: +₱15; p
 This repository is assembled from the completed project in three staged snapshots.
 The commits are created during submission preparation, rather than backdated development records.
 
-## Current stage
+## Features
 
-Working ordering and customization, cart quantity controls, totals, cash/change,
-transaction recording, stock deduction, receipts, product management, and sales history.
-The next commit adds the debug-review fixes and regression tests.
+- Four beverage categories, images, prices, and available stock.
+- Regular/Large size, sweetness, ice, and optional add-ons.
+- Cart quantity controls, totals, cash payment, and automatic change.
+- Atomic SQLite checkout, inventory deduction, transaction records, and receipts.
+- Product management, restocking, sales history, and printable receipts.
+- Input validation, prepared statements, stale price/stock checks, and safe payment retries.
+
+## Tests
+
+Node.js is required only for the optional JavaScript/integration tests.
+
+```sh
+php tests/run.php
+node tests/http.mjs
+node tests/cart.mjs
+```
+
+The final version passes 108 checks. See `DEBUG_REVIEW.md` for issues and corrections.
+This local classroom project uses a shared cashier/admin workspace without account login.

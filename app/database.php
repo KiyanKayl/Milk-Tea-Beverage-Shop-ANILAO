@@ -28,7 +28,11 @@ function database(): PDO
         }
         $connection->exec('COMMIT');
     } catch (Throwable $error) {
-        $connection->exec('ROLLBACK');
+        // Keep database.php usable without the other application includes.
+        try { $connection->exec('ROLLBACK'); } catch (PDOException $rollbackError) {
+            error_log('Rollback could not run: ' . $rollbackError->getMessage());
+        }
+        $connection = null;
         throw $error;
     }
     return $connection;

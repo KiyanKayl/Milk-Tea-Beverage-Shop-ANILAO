@@ -18,6 +18,17 @@ function query(PDO $db, string $sql, array $parameters = []): PDOStatement
     return $statement;
 }
 
+function rollback_safely(PDO $db): void
+{
+    // SQLite can automatically roll back some errors. Do not let a second
+    // ROLLBACK hide the original exception when no transaction remains.
+    try {
+        $db->exec('ROLLBACK');
+    } catch (PDOException $error) {
+        error_log('Rollback could not run: ' . $error->getMessage());
+    }
+}
+
 function integer(mixed $value, string $label, int $min = 0, int $max = 1000000): int
 {
     if ((!is_int($value) && !is_string($value)) || !preg_match('/^\d+$/D', (string) $value)) {

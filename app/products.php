@@ -13,7 +13,11 @@ function manage_product(PDO $db, array $input): void
     try {
         if ($action === 'save') {
             $id = integer($input['id'] ?? '0', 'Product ID');
-            $name = trim((string) ($input['name'] ?? ''));
+            // Reject malformed form arrays instead of casting them to "Array".
+            if (!is_string($input['name'] ?? null)) {
+                throw new InvalidArgumentException('Product name must be text.');
+            }
+            $name = trim($input['name']);
             if (strlen($name) < 1 || strlen($name) > 100) {
                 throw new InvalidArgumentException('Product name must contain 1–100 characters.');
             }
@@ -60,7 +64,7 @@ function manage_product(PDO $db, array $input): void
         }
         $db->exec('COMMIT');
     } catch (Throwable $error) {
-        $db->exec('ROLLBACK');
+        rollback_safely($db);
         throw $error;
     }
 }
